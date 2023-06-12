@@ -34,7 +34,7 @@ const Categories = () => {
   const queryParam = useSearchParams().get("q");
 
   return (
-    <div className="flex items-centers justify-center gap-5">
+    <div className="flex items-centers justify-start gap-7">
       {
         categories.map((category, i) => (
           <CategoryItem

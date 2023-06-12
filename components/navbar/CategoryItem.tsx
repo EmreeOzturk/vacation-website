@@ -14,7 +14,7 @@ const CategoryItem: React.FC<CategoryItemProps> = ({
       onClick={() => router.push(href)}
       className={`${
         selected && "border-b-2 border-red-500"
-      } flex items-center justify-center gap-1 text-xl hover:bg-red-200`}
+      } flex items-center justify-center gap-1 text-xl hover:bg-gray-300 px-2 py-1 rounded-md cursor-pointer transition-colors duration`}
     >
       <Icon />
       {name}
