@@ -1,3 +1,4 @@
+import { SubmitHandler } from "react-hook-form";
 import { IconType } from "react-icons";
 type CategoryItemProps = {
   name: string;
@@ -15,17 +16,9 @@ type UserMenuItemsProps = {
 type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: () => void;
+  onSubmit: any;
   title: string;
-  footer?: React.ReactNode;
-  body?: React.ReactNode;
-  btnLabel?: string;
-};
-
-type RegisterModalProps = {
-  isOpen: boolean;
-  onClose: () => void;
-  onSubmit: () => void;
-  body?: React.ReactNode;
+  footer?: React.ReactElement;
+  body?: React.ReactElement;
   btnLabel?: string;
 };

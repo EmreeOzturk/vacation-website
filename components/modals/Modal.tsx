@@ -71,7 +71,7 @@ const Modal: React.FC<ModalProps> = ({
         <div className="relative flex flex-col w-full p-6">
           <div className="flex-1">
             <div className="mt-4">
-              <p className="text-sm text-gray-500">{body}</p>
+             {body}
             </div>
           </div>
           <div className="flex justify-end">
@@ -88,6 +88,7 @@ const Modal: React.FC<ModalProps> = ({
                         bg-indigo-600
                         border border-transparent
                         rounded-md
+                        w-full
                         shadow-sm
                         hover:bg-indigo-700
                         focus:outline-none
@@ -99,6 +100,7 @@ const Modal: React.FC<ModalProps> = ({
               {btnLabel}
             </button>
           </div>
+          <div>{footer && <div className="mt-5">{footer}</div>}</div>
         </div>
       </div>
     </div>

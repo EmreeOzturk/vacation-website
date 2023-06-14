@@ -3,7 +3,8 @@ import Navbar from "@/components/navbar/Navbar";
 import "../styles/globals.css";
 import MountedClient from "@/components/providers/MountedClient";
 import RegisterModal from "@/components/modals/RegisterModal";
-
+import ReduxProvider from "@/components/providers/ReduxProvider";
+import SignInModal from "@/components/modals/SignInModal";
 const nunitoFont = Nunito({ subsets: ["latin"] });
 
 export const metadata = {
@@ -19,11 +20,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunitoFont.className}>
-        <MountedClient>
-          <RegisterModal />
-          <Navbar />
-          {children}
-        </MountedClient>
+        <ReduxProvider>
+          <MountedClient>
+            <RegisterModal />
+            <SignInModal />
+            <Navbar />
+            {children}
+          </MountedClient>
+        </ReduxProvider>
       </body>
     </html>
   );
