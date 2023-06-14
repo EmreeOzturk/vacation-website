@@ -5,7 +5,8 @@ import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/redux/store";
 import { registerModalFunc } from "@/redux/modalSlice";
-
+import axios from "axios";
+import { toast } from "react-toastify";
 const RegisterModal: React.FC = () => {
   const isOpen = useSelector((state: RootState) => state.modal.registerModal);
   const dispatch = useDispatch();
@@ -21,7 +22,17 @@ const RegisterModal: React.FC = () => {
       password: "",
     },
   });
-  const onSubmit: SubmitHandler<FieldValues> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    axios
+      .post("/api/register", data)
+      .then((res) => {
+        dispatch(registerModalFunc());
+        toast.success("Register Success");
+      })
+      .catch((err) => {
+        toast.error("Register Failed");
+      });
+  };
   const bodyElement: React.ReactNode = (
     <div>
       <input

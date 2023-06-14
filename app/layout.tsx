@@ -5,6 +5,7 @@ import MountedClient from "@/components/providers/MountedClient";
 import RegisterModal from "@/components/modals/RegisterModal";
 import ReduxProvider from "@/components/providers/ReduxProvider";
 import SignInModal from "@/components/modals/SignInModal";
+import ToastProvider from "@/components/providers/ToastProvider";
 const nunitoFont = Nunito({ subsets: ["latin"] });
 
 export const metadata = {
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={nunitoFont.className}>
         <ReduxProvider>
           <MountedClient>
+            <ToastProvider />
             <RegisterModal />
             <SignInModal />
             <Navbar />
